@@ -44,6 +44,8 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
+      - run: npm run build
+
 
       - uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
