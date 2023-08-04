@@ -1,0 +1,28 @@
+name: push-release
+on:
+  push
+
+permissions:
+  id-token: "write"
+  contents: "write"
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+
+      - uses: marvinpinto/action-automatic-releases@v1.2.1
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            build/chromium.zip
+            build/firefox.zip
+            build/safari.dmg
+            build/chromium-without-katex-and-tiktoken.zip
+            build/firefox-without-katex-and-tiktoken.zip

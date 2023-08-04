@@ -8,6 +8,7 @@ import {
   Braces,
   Globe,
   ChatTextFill,
+  PersonVideo,
 } from 'react-bootstrap-icons'
 import { getPreferredLanguage } from '../../config/language.mjs'
 
@@ -96,6 +97,13 @@ export const config = {
     genPrompt: async (selection) => {
       const preferredLanguage = await getPreferredLanguage()
       return `Reply in ${preferredLanguage}.Analyze the following content and express your opinion,or give your answer:\n"${selection}"`
+    },
+  },
+  ask: {
+    icon: <PersonVideo />,
+    label: '面试询问',
+    genPrompt: async (selection) => {
+      return `从现在开始，你是一名资深程序员，你需要识别出下面这段话中的所有面试中会出现的问题，并用专业的语言直接给出答案: \n"${selection}"`
     },
   },
 }
