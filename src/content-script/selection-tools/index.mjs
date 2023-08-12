@@ -103,7 +103,7 @@ export const config = {
     icon: <PersonVideo />,
     label: '面试询问',
     genPrompt: async (selection) => {
-      return `从现在开始，你是一名资深程序员，你需要识别出下面这段话中的所有面试中会出现的问题，并用专业的语言直接给出答案: \n"${selection}"`
+      return `从现在开始，你是一名资深程序员，你需要识别出下面这段话中的所有面试中会出现的问题，并用专业的语言直接给出答案，如果需要编程，请使用python语言。\n---\n例如：\n问题是：...\n回答为：...\n\n问题是: "${selection}"`
     },
   },
 }
