@@ -9,6 +9,7 @@ import {
   Globe,
   ChatTextFill,
   PersonVideo,
+  TerminalFill,
 } from 'react-bootstrap-icons'
 import { getPreferredLanguage } from '../../config/language.mjs'
 
@@ -99,11 +100,18 @@ export const config = {
       return `Reply in ${preferredLanguage}.Analyze the following content and express your opinion,or give your answer:\n"${selection}"`
     },
   },
-  ask: {
+  myask: {
     icon: <PersonVideo />,
     label: '面试询问',
     genPrompt: async (selection) => {
-      return `从现在开始，你是一名资深程序员，你需要识别出下面这段话中的所有面试中会出现的问题，并用专业的语言直接给出答案，如果需要编程，请使用python语言。\n---\n例如：\n问题是：...\n回答为：...\n\n问题是: "${selection}"`
+      return `从现在开始，你是一名资深程序员，你需要识别出下面这段话中的所有面试中会出现的问题，并用专业的语言直接给出答案。\n---\n例如：\n问题是：...\n回答为：...\n\n问题是: "${selection}"`
+    },
+  },
+  myask2: {
+    icon: <TerminalFill />,
+    label: '编程问题',
+    genPrompt: async (selection) => {
+      return `从现在开始，你是一名资深程序员，请给出以下算法题的解题思路和代码，并满足以下需求：\n1. 代码可以在 LeetCode 中国站（力扣）运行；\n2. 代码需要包含详细的中文注释，解释各部分代码的含义；\n3.给出复杂度分析；\n4. 请使用Python语言。\n---\n例如：\n问题是：...\n回答为：...\n\n问题是: "${selection}"`
     },
   },
 }
