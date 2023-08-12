@@ -226,6 +226,8 @@ export const defaultConfig = {
     'divide',
     'code',
     'ask',
+    'myask',
+    'myask2',
   ],
   selectionToolsDesc: [
     'Explain',
@@ -237,6 +239,8 @@ export const defaultConfig = {
     'Sentiment Analysis',
     'Divide Paragraphs',
     'Code Explain',
+    'Ask',
+    'Ask',
     'Ask',
   ],
   // importing configuration will result in gpt-3-encoder being packaged into the output file
